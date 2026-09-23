@@ -1,0 +1,28 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Google+Sans:wght@400;500&display=block" rel="stylesheet">
+<link rel="stylesheet" href="../../content.css">
+<style>
+ body{margin:0;width:1280px;height:800px;background:#202124;font-family:"Google Sans",Roboto,sans-serif;overflow:hidden;position:relative}
+ .grid{position:absolute;inset:16px 16px 88px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+ .tile{background:#3c4043;border-radius:12px;display:flex;align-items:center;justify-content:center;position:relative}
+ .av{width:120px;height:120px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:52px;color:#fff}
+ .name{position:absolute;left:16px;bottom:12px;color:#fff;font-size:14px}
+ .bar{position:absolute;left:0;right:0;bottom:0;height:80px;display:flex;align-items:center;justify-content:center;gap:12px}
+ .btn{width:40px;height:40px;border-radius:50%;background:#3c4043}
+ .end{width:56px;border-radius:20px;background:#ea4335}
+ .clock{position:absolute;left:24px;bottom:30px;color:#e3e3e3;font-size:16px}
+ #mrr-overlay{position:absolute;animation:none} #mrr-overlay .mrr-card,#mrr-overlay .mrr-icon::after{animation:none}
+</style></head><body>
+<div class="grid">
+ <div class="tile"><div class="av" style="background:#7b61ff">K</div><div class="name">Client</div></div>
+ <div class="tile"><div class="av" style="background:#12a4af">A</div><div class="name">You</div></div>
+</div>
+<div class="clock">7:30 PM | abc-defg-hij</div>
+<div class="bar"><div class="btn"></div><div class="btn"></div><div class="btn"></div><div class="btn"></div><div class="btn end"></div></div>
+<div id="mrr-overlay"><div class="mrr-card">
+ <div class="mrr-icon"></div>
+ <h1>Are you recording this call?</h1>
+ <p>Start <b>Take notes with Gemini</b> or <b>Recording</b> now, before you forget.</p>
+ <div class="mrr-actions"><button class="mrr-secondary">Not needed</button><button class="mrr-primary">Notes are on</button></div>
+</div></div>
+</body></html>
