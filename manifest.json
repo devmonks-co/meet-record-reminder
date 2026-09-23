@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Meet Record Reminder",
+  "version": "1.0.0",
+  "description": "Shows a big, hard-to-miss reminder to start notes or recording when you join a Google Meet call.",
+  "content_scripts": [
+    {
+      "matches": ["https://meet.google.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
