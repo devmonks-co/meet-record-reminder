@@ -36,8 +36,8 @@
           'Start ', el('b', { textContent: 'Take notes with Gemini' }),
           ' or ', el('b', { textContent: 'Recording' }), ' now, before you forget.'),
         el('div', { className: 'mrr-actions' },
-          el('button', { className: 'mrr-primary', textContent: 'Notes are on' }),
-          el('button', { className: 'mrr-secondary', textContent: 'Not needed' })
+          el('button', { className: 'mrr-secondary', textContent: 'Not needed' }),
+          el('button', { className: 'mrr-primary', textContent: 'Notes are on' })
         )
       )
     );
@@ -48,6 +48,7 @@
     });
 
     document.body.appendChild(overlay);
+    overlay.querySelector('.mrr-primary').focus();
   }
 
   function check() {

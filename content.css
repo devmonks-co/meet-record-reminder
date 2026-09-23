@@ -1,3 +1,5 @@
+/* Styled after Meet's in-call dialogs (Material 3, dark surface). */
+
 #mrr-overlay {
   position: fixed;
   inset: 0;
@@ -5,64 +7,114 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(20, 0, 0, 0.75);
-  font-family: system-ui, -apple-system, sans-serif;
+  background: rgba(0, 0, 0, 0.6);
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  animation: mrr-fade 150ms ease-out;
 }
 
 #mrr-overlay .mrr-card {
-  max-width: 520px;
-  padding: 40px 36px;
-  border-radius: 16px;
-  background: #fff;
-  border: 6px solid #d93025;
-  text-align: center;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  width: min(420px, calc(100vw - 32px));
+  padding: 24px;
+  border-radius: 28px;
+  background: #1e1f20;
+  color: #e3e3e3;
+  box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.3);
+  animation: mrr-pop 200ms cubic-bezier(0.2, 0, 0, 1);
 }
 
+/* Red "recording" dot inside a tonal circle */
 #mrr-overlay .mrr-icon {
-  font-size: 48px;
-  line-height: 1;
-  color: #d93025;
-  animation: mrr-pulse 1s ease-in-out infinite;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background: rgba(242, 139, 130, 0.16);
+  font-size: 0;
+}
+
+#mrr-overlay .mrr-icon::after {
+  content: "";
+  position: absolute;
+  inset: 16px;
+  border-radius: 50%;
+  background: #f28b82;
+  animation: mrr-pulse 1.4s ease-in-out infinite;
 }
 
 #mrr-overlay h1 {
-  margin: 16px 0 8px;
-  font-size: 30px;
-  color: #202124;
+  margin: 0 0 12px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  color: #e3e3e3;
 }
 
 #mrr-overlay p {
-  margin: 0 0 28px;
-  font-size: 17px;
-  color: #3c4043;
+  margin: 0 0 24px;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: #c4c7c5;
+}
+
+#mrr-overlay p b {
+  font-weight: 500;
+  color: #e3e3e3;
 }
 
 #mrr-overlay .mrr-actions {
   display: flex;
-  gap: 12px;
-  justify-content: center;
+  gap: 8px;
+  justify-content: flex-end;
 }
 
 #mrr-overlay button {
-  padding: 12px 22px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
+  height: 40px;
+  padding: 0 24px;
   border: none;
-}
-
-#mrr-overlay .mrr-primary {
-  background: #d93025;
-  color: #fff;
+  border-radius: 20px;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  cursor: pointer;
+  transition: background-color 150ms, box-shadow 150ms;
 }
 
 #mrr-overlay .mrr-secondary {
-  background: #f1f3f4;
-  color: #3c4043;
+  background: transparent;
+  color: #a8c7fa;
+}
+
+#mrr-overlay .mrr-secondary:hover {
+  background: rgba(168, 199, 250, 0.08);
+}
+
+#mrr-overlay .mrr-primary {
+  background: #a8c7fa;
+  color: #062e6f;
+}
+
+#mrr-overlay .mrr-primary:hover {
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.3);
+  background: #b6d0fb;
+}
+
+#mrr-overlay button:focus-visible {
+  outline: 2px solid #a8c7fa;
+  outline-offset: 2px;
 }
 
 @keyframes mrr-pulse {
-  50% { opacity: 0.3; }
+  50% { opacity: 0.35; }
+}
+
+@keyframes mrr-fade {
+  from { opacity: 0; }
+}
+
+@keyframes mrr-pop {
+  from { opacity: 0; transform: scale(0.92); }
 }
